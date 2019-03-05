@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C7F46E5652137F2F3ABF2E0709C8796895790FFA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "645020609B76D89355D221FB28532DC987467A74" : 9223372036854775807,
+    "C7F46E5652137F2F3ABF2E0709C8796895790FFA" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "82D58633-DFE1-449B-B8DF-C43480A5D517",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "645020609B76D89355D221FB28532DC987467A74" : "",
+    "C7F46E5652137F2F3ABF2E0709C8796895790FFA" : "app-myhood\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MyHood",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MyHood\/MyHood.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:julianmino\/provisional-repo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "645020609B76D89355D221FB28532DC987467A74"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:julianmino\/app-myhood.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C7F46E5652137F2F3ABF2E0709C8796895790FFA"
+    }
+  ]
+}
