@@ -9,9 +9,9 @@
 import Foundation
 
 class Post {
-    fileprivate var _imagePath: String
-    fileprivate var _title: String
-    fileprivate var _postDesc: String
+    fileprivate var _imagePath: String!
+    fileprivate var _title: String!
+    fileprivate var _postDesc: String!
     
     var imagePath: String {
         return _imagePath

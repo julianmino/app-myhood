@@ -50,11 +50,11 @@
                                     <constraint firstItem="XG3-bk-yug" firstAttribute="centerY" secondItem="XAU-bg-fqF" secondAttribute="centerY" id="k5D-CL-7Ea"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nht-Km-I0b">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nht-Km-I0b">
                                 <rect key="frame" x="16" y="85" width="343" height="562"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="100" id="qgx-Yq-Q7R">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="100" id="qgx-Yq-Q7R" customClass="PostCell" customModule="MyHood" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qgx-Yq-Q7R" id="2Zh-VM-y85" customClass="PostCell" customModule="MyHood" customModuleProvider="target">
@@ -97,9 +97,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="descLbl" destination="80k-As-e6G" id="SdS-bb-ZIc"/>
-                                            <outlet property="postImg" destination="fJi-jg-BUo" id="OJd-Qe-8Ke"/>
-                                            <outlet property="titleLbl" destination="gtS-Pv-p69" id="9vp-VL-yJi"/>
+                                            <outlet property="descLbl" destination="80k-As-e6G" id="BIf-wd-8yS"/>
+                                            <outlet property="postImg" destination="fJi-jg-BUo" id="2a8-Gq-4mE"/>
+                                            <outlet property="titleLbl" destination="gtS-Pv-p69" id="jVr-QN-imF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
