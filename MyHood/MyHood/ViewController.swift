@@ -17,12 +17,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let post = Post(imagePath: "", title: "Title 1", description: "description")
+        let post1 = Post(imagePath: "", title: "Title 2", description: "description")
+        let post2 = Post(imagePath: "", title: "Title 3", description: "description")
+        
+        posts.append(post)
+        posts.append(post1)
+        posts.append(post2)
+        
+        tableView.reloadData()
 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-            return UITableViewCell()
+            let post = posts[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
+                cell.configureCell(post)
+                return cell
+        }
+        return PostCell()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
