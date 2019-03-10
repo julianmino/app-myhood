@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		360D7C4F223080C5009E894E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D7C4E223080C5009E894E /* PostCell.swift */; };
 		361DEEC02235946D00986E9B /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361DEEBF2235946D00986E9B /* AddPostVC.swift */; };
+		361DEEC32235A74B00986E9B /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361DEEC22235A74B00986E9B /* DataService.swift */; };
 		36E4A82D222ED77C00978EA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E4A82C222ED77C00978EA0 /* AppDelegate.swift */; };
 		36E4A82F222ED77C00978EA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E4A82E222ED77C00978EA0 /* ViewController.swift */; };
 		36E4A832222ED77C00978EA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E4A830222ED77C00978EA0 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		360D7C4E223080C5009E894E /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		361DEEBF2235946D00986E9B /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
+		361DEEC22235A74B00986E9B /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		36E4A829222ED77C00978EA0 /* MyHood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E4A82C222ED77C00978EA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36E4A82E222ED77C00978EA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,9 +59,18 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		361DEEC12235A72900986E9B /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				361DEEC22235A74B00986E9B /* DataService.swift */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
 		36E4A820222ED77C00978EA0 = {
 			isa = PBXGroup;
 			children = (
+				361DEEC12235A72900986E9B /* Singleton */,
 				361DEEBE2235942E00986E9B /* Controller */,
 				360D7C4D22308073009E894E /* View */,
 				36E4A83E222ED79100978EA0 /* Model */,
@@ -172,6 +183,7 @@
 				36E4A840222ED7F400978EA0 /* Post.swift in Sources */,
 				361DEEC02235946D00986E9B /* AddPostVC.swift in Sources */,
 				36E4A82F222ED77C00978EA0 /* ViewController.swift in Sources */,
+				361DEEC32235A74B00986E9B /* DataService.swift in Sources */,
 				36E4A82D222ED77C00978EA0 /* AppDelegate.swift in Sources */,
 				360D7C4F223080C5009E894E /* PostCell.swift in Sources */,
 			);
