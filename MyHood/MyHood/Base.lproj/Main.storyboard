@@ -160,6 +160,9 @@
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButtonPress:" destination="yxi-DJ-Kee" eventType="touchUpInside" id="tEC-KP-p9J"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -172,8 +175,9 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="xxK-5h-Z3X"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrel-water-bridge" translatesAutoresizingMaskIntoConstraints="NO" id="xcZ-IU-NKY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xcZ-IU-NKY">
                                 <rect key="frame" x="67" y="100" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Ar4-gQ-oQX"/>
                                     <constraint firstAttribute="height" constant="240" id="awH-yY-B0C"/>
@@ -189,6 +193,9 @@
                                 <state key="normal" title="+ Add Image">
                                     <color key="titleColor" red="0.99098679490195352" green="1" blue="0.9734630009010915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addImagePressed:" destination="yxi-DJ-Kee" eventType="touchUpInside" id="0LA-Hj-hNt"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7x3-Eq-LKn">
                                 <rect key="frame" x="16" y="370" width="343" height="30"/>
@@ -218,6 +225,9 @@
                                 <state key="normal" title="Make Post">
                                     <color key="titleColor" red="0.97532538200244734" green="1" blue="0.942171788560621" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="makePostPressed:" destination="yxi-DJ-Kee" eventType="touchUpInside" id="hLY-FU-c1t"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -243,6 +253,11 @@
                             <constraint firstItem="m4O-SW-uVP" firstAttribute="centerY" secondItem="xcZ-IU-NKY" secondAttribute="centerY" id="yqS-uF-hUr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descField" destination="rjK-wX-dwf" id="6Gb-mX-LDs"/>
+                        <outlet property="postImage" destination="xcZ-IU-NKY" id="uDJ-q8-9KC"/>
+                        <outlet property="titleField" destination="7x3-Eq-LKn" id="qbI-1A-3sw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEG-WJ-EJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
