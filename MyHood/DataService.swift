@@ -34,12 +34,19 @@ class DataService {
         UserDefaults.standard.synchronize()
     }
     
-    func saveImageAndCreatePath(image: UIImage) {
+    func saveImageAndCreatePath(image: UIImage) -> String {
+        let imgData = UIImagePNGRepresentation(image)
+        let imgPath = "image\(Date.timeIntervalSinceReferenceDate).png"
+        let fullPath = documentsPathForFileName(imgPath)
         
+        try? imgData?.write(to: URL(fileURLWithPath: fullPath), options: [.atomic])
+        return imgPath
     }
     
-    func imageForPath(path: String) {
-        
+    func imageForPath(path: String) -> UIImage? {
+        let filePath = documentsPathForFileName(path)
+        let image = UIImage(named: filePath)
+        return image
     }
     
     func addPost(post: Post) {
@@ -47,6 +54,13 @@ class DataService {
         savePosts()
         loadPosts()
     }
+    
+    func documentsPathForFileName(_ name: String) -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let fullPath = paths[0] as NSString
+        return fullPath.appendingPathComponent(name)
+    }
+    
     
     
     

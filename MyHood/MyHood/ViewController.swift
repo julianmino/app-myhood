@@ -18,21 +18,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         
-        let post = Post(imagePath: "", title: "Title 1", description: "description")
-        let post1 = Post(imagePath: "", title: "Title 2", description: "description")
-        let post2 = Post(imagePath: "", title: "Title 3", description: "description")
+        DataService.instance.loadPosts()
         
-        posts.append(post)
-        posts.append(post1)
-        posts.append(post2)
-        
-        tableView.reloadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.onPostsLoaded(_:)), name: NSNotification.Name(rawValue: "postsLoaded"), object: nil)
 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-            let post = posts[indexPath.row]
+            let post = DataService.instance.loadedPosts[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
                 cell.configureCell(post)
             return cell
@@ -42,9 +36,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-            return posts.count
+            return DataService.instance.loadedPosts.count
     }
 
+    func onPostsLoaded(_ notif: AnyObject) {
+        tableView.reloadData()
+    }
 
 }
 
