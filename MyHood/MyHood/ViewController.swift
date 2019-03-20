@@ -10,17 +10,20 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
     @IBOutlet weak var tableView: UITableView!
     var posts = [Post]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         
+        
         DataService.instance.loadPosts()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.onPostsLoaded(_:)), name: NSNotification.Name(rawValue: "postsLoaded"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.onPostsLoaded(notification:)), name: Notification.Name("postsLoaded"), object: nil)
 
     }
     
@@ -39,7 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return DataService.instance.loadedPosts.count
     }
 
-    func onPostsLoaded(_ notif: AnyObject) {
+    @objc func onPostsLoaded(notification: Notification) {
         tableView.reloadData()
     }
 

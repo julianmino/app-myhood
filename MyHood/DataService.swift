@@ -24,8 +24,8 @@ class DataService {
                 _loadedPosts = postsArray
             }
             
-            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "loadedPosts"), object: nil))
         }
+            NotificationCenter.default.post(Notification(name: Notification.Name("postsLoaded"), object: nil))
     }
     
     func savePosts() {
@@ -43,7 +43,7 @@ class DataService {
         return imgPath
     }
     
-    func imageForPath(path: String) -> UIImage? {
+    func imageForPath(path: String) ->UIImage? {
         let filePath = documentsPathForFileName(path)
         let image = UIImage(named: filePath)
         return image
