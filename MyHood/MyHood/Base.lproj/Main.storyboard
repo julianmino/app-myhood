@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M9h-bG-LKW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <!--PostViewVC-->
         <scene sceneID="ouD-em-v2V">
             <objects>
-                <viewController id="VZh-Dn-Ssb" userLabel="PostViewVC" customClass="PostViewVC" customModule="MyHood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostViewVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VZh-Dn-Ssb" userLabel="PostViewVC" customClass="PostViewVC" customModule="MyHood" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wm5-hs-9Sp"/>
                         <viewControllerLayoutGuide type="bottom" id="afe-SE-gVc"/>
@@ -41,7 +41,7 @@
                                         </constraints>
                                         <state key="normal" image="backButton"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="MGG-5x-2qJ"/>
+                                            <segue destination="M9h-bG-LKW" kind="show" id="MGG-5x-2qJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -137,7 +137,7 @@
                                         </constraints>
                                         <state key="normal" image="camera"/>
                                         <connections>
-                                            <segue destination="yxi-DJ-Kee" kind="show" identifier="AddPostVC" id="uzq-k2-pZW"/>
+                                            <segue destination="yxi-DJ-Kee" kind="presentation" identifier="AddPostVC" modalTransitionStyle="coverVertical" id="uzq-k2-pZW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -200,7 +200,6 @@
                                             <outlet property="descLbl" destination="80k-As-e6G" id="BIf-wd-8yS"/>
                                             <outlet property="postImg" destination="fJi-jg-BUo" id="2a8-Gq-4mE"/>
                                             <outlet property="titleLbl" destination="gtS-Pv-p69" id="jVr-QN-imF"/>
-                                            <segue destination="VZh-Dn-Ssb" kind="show" id="46S-Dj-wub"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -217,13 +216,14 @@
                             <constraint firstItem="Nht-Km-I0b" firstAttribute="top" secondItem="XAU-bg-fqF" secondAttribute="bottom" constant="20" id="rUh-2s-uyk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FAo-3F-nSs"/>
                     <connections>
                         <outlet property="tableView" destination="Nht-Km-I0b" id="1RL-Jf-JLz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122.40000000000001" y="105.69715142428787"/>
+            <point key="canvasLocation" x="1061.5999999999999" y="105.69715142428787"/>
         </scene>
         <!--Add PostVC-->
         <scene sceneID="hhK-13-Q7Y">
@@ -259,7 +259,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="cancelButtonPress:" destination="yxi-DJ-Kee" eventType="touchUpInside" id="tEC-KP-p9J"/>
+                                            <action selector="cancelButtonPress:" destination="yxi-DJ-Kee" eventType="touchUpInside" id="A5F-9M-ueY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -359,7 +359,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEG-WJ-EJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885.60000000000002" y="98.50074962518741"/>
+            <point key="canvasLocation" x="1824.8" y="98.50074962518741"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wSC-Xp-BTQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="M9h-bG-LKW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CHC-FP-SZE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qrD-JW-uBZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LCs-Yu-7x1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122.40000000000001" y="105.69715142428787"/>
         </scene>
     </scenes>
     <resources>

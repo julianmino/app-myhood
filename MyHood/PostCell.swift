@@ -13,6 +13,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,5 @@ class PostCell: UITableViewCell {
             postImg.image = DataService.instance.imageForPath(path: post.imagePath)
         
     }
-
 
 }

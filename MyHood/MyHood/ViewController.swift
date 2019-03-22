@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         
-        
+        self.navigationController?.isNavigationBarHidden = true
         DataService.instance.loadPosts()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.onPostsLoaded(notification:)), name: Notification.Name("postsLoaded"), object: nil)
@@ -40,6 +40,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
             return DataService.instance.loadedPosts.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let DvC = Storyboard.instantiateViewController(withIdentifier: "PostViewVC") as! PostViewVC
+        
+        
+        
+        DvC.getPostImage = DataService.instance.imageForPath(path: DataService.instance.loadedPosts[indexPath.row].imagePath)!
+        DvC.getPostDesc = DataService.instance.loadedPosts[indexPath.row].postDesc
+        DvC.getPostTitle = DataService.instance.loadedPosts[indexPath.row].title
+        
+        self.navigationController?.pushViewController(DvC, animated: true)
     }
 
     @objc func onPostsLoaded(notification: Notification) {

@@ -10,6 +10,10 @@ import UIKit
 
 class PostViewVC: UIViewController {
     
+    var getPostImage = UIImage()
+    var getPostTitle = String()
+    var getPostDesc = String()
+    
     @IBOutlet weak var finalPost: UIImageView!
 
     @IBOutlet weak var finalTitleLbl: UILabel!
@@ -19,16 +23,9 @@ class PostViewVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        finalPost.image = getPostImage
+        finalTitleLbl.text = getPostTitle
+        finalDescLbl.text = getPostDesc
     }
 
 }

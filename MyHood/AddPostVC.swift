@@ -28,6 +28,7 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
     @IBAction func cancelButtonPress(_ sender: UIButton) {
         
+        //performSegue(withIdentifier: "comeBack", sender: self)
         dismiss(animated: true, completion: nil)
     }
     
