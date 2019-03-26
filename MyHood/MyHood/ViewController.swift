@@ -24,6 +24,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         DataService.instance.loadPosts()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.onPostsLoaded(notification:)), name: Notification.Name("postsLoaded"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.onPostDeleted(notification:)), name: Notification.Name("postsRemoved"), object: nil)
 
     }
     
@@ -47,8 +49,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let Storyboard = UIStoryboard(name: "Main", bundle: nil)
         let DvC = Storyboard.instantiateViewController(withIdentifier: "PostViewVC") as! PostViewVC
         
-        
-        
         DvC.getPostImage = DataService.instance.imageForPath(path: DataService.instance.loadedPosts[indexPath.row].imagePath)!
         DvC.getPostDesc = DataService.instance.loadedPosts[indexPath.row].postDesc
         DvC.getPostTitle = DataService.instance.loadedPosts[indexPath.row].title
@@ -57,6 +57,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     @objc func onPostsLoaded(notification: Notification) {
+        tableView.reloadData()
+    }
+    
+    @objc func onPostDeleted(notification: Notification) {
         tableView.reloadData()
     }
 

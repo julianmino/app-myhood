@@ -41,7 +41,7 @@
                                         </constraints>
                                         <state key="normal" image="backButton"/>
                                         <connections>
-                                            <segue destination="M9h-bG-LKW" kind="show" id="MGG-5x-2qJ"/>
+                                            <segue destination="M9h-bG-LKW" kind="show" identifier="back" id="MGG-5x-2qJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -72,12 +72,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7A-VO-CwS">
-                                <rect key="frame" x="16" y="500" width="343" height="147"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7A-VO-CwS">
+                                <rect key="frame" x="16" y="500" width="343" height="87"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahh-rG-xLt">
+                                <rect key="frame" x="283" y="610" width="76" height="37"/>
+                                <color key="backgroundColor" red="0.88247342660000005" green="0.25142269649999999" blue="0.1853755772" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="h5Y-Ex-JgJ"/>
+                                    <constraint firstAttribute="height" constant="37" id="xzP-jl-ZcW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="0.97532538199999996" green="1" blue="0.94217178859999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPressedDelete:" destination="VZh-Dn-Ssb" eventType="touchUpInside" id="d9O-C5-iGN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -90,14 +105,17 @@
                             <constraint firstItem="U7A-VO-CwS" firstAttribute="top" secondItem="bRc-2X-bUd" secondAttribute="bottom" constant="10" id="NaC-wJ-X6A"/>
                             <constraint firstItem="WhR-Qe-Pz7" firstAttribute="leading" secondItem="62S-rE-goK" secondAttribute="leading" id="Ree-ZM-H81"/>
                             <constraint firstItem="bRc-2X-bUd" firstAttribute="trailing" secondItem="62S-rE-goK" secondAttribute="trailingMargin" id="Yif-LH-WnG"/>
-                            <constraint firstItem="afe-SE-gVc" firstAttribute="top" secondItem="U7A-VO-CwS" secondAttribute="bottom" constant="20" id="ZRo-Qh-F3u"/>
+                            <constraint firstItem="afe-SE-gVc" firstAttribute="top" secondItem="U7A-VO-CwS" secondAttribute="bottom" constant="80" id="ZRo-Qh-F3u"/>
+                            <constraint firstItem="afe-SE-gVc" firstAttribute="top" secondItem="Ahh-rG-xLt" secondAttribute="bottom" constant="20" id="afA-Wr-NhK"/>
                             <constraint firstItem="WhR-Qe-Pz7" firstAttribute="centerX" secondItem="62S-rE-goK" secondAttribute="centerX" id="esG-xc-XPG"/>
+                            <constraint firstItem="Ahh-rG-xLt" firstAttribute="trailing" secondItem="62S-rE-goK" secondAttribute="trailingMargin" id="j1f-jw-oSl"/>
                             <constraint firstAttribute="trailing" secondItem="WhR-Qe-Pz7" secondAttribute="trailing" id="mh8-u5-3Dt"/>
                             <constraint firstItem="bRc-2X-bUd" firstAttribute="leading" secondItem="62S-rE-goK" secondAttribute="leadingMargin" id="vaG-FJ-TiH"/>
                             <constraint firstItem="auA-mI-aOJ" firstAttribute="leading" secondItem="62S-rE-goK" secondAttribute="leading" id="ww8-cE-FlI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deleteButton" destination="Ahh-rG-xLt" id="PKC-u1-XiM"/>
                         <outlet property="finalDescLbl" destination="U7A-VO-CwS" id="gZ6-k3-Rv7"/>
                         <outlet property="finalPost" destination="WhR-Qe-Pz7" id="6QO-Fo-YoO"/>
                         <outlet property="finalTitleLbl" destination="bRc-2X-bUd" id="3hC-5J-C2F"/>
@@ -110,7 +128,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyHood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" id="BYZ-38-t0r" customClass="ViewController" customModule="MyHood" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>

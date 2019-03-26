@@ -15,7 +15,12 @@ class DataService {
     private var _loadedPosts = [Post]()
     
     var loadedPosts: [Post] {
+        get {
         return _loadedPosts
+    }
+        set {
+            _loadedPosts = newValue
+        }
     }
     
     func loadPosts() {
