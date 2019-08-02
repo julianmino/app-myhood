@@ -18,11 +18,21 @@ class Post: NSObject, NSCoding {
     }
     
     var title: String {
+        get {
         return _title
+    }
+        set {
+            _title = newValue
+        }
     }
     
     var postDesc: String {
+        get {
         return _postDesc
+    }
+        set {
+            _postDesc = newValue
+        }
     }
 
     init(imagePath: String, title: String, description: String) {

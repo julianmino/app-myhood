@@ -49,16 +49,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
-            DataService.instance.loadedPosts.remove(at: indexPath.row)
-            DataService.instance.savePosts()
-            //DataService.instance.loadPosts()
-            tableView.reloadData()
-        }
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, indexPath in
+            DataService.instance.loadedPosts.remove(at: indexPath.row)
+            DataService.instance.savePosts()
+            tableView.reloadData()
+        }
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, indexPath in
             let Storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -66,12 +65,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             editingVC.getPostDesc = DataService.instance.loadedPosts[indexPath.row].postDesc
             editingVC.getPostTitle = DataService.instance.loadedPosts[indexPath.row].title
             editingVC.getPostImage = DataService.instance.imageForPath(path: DataService.instance.loadedPosts[indexPath.row].imagePath)!
+            editingVC.getImagePath = DataService.instance.loadedPosts[indexPath.row].imagePath
+            editingVC.getPost = DataService.instance.loadedPosts[indexPath.row]
             
             self.navigationController?.pushViewController(editingVC, animated: true)
         }
         edit.backgroundColor = UIColor.blue
         
-        return [edit]
+        return [edit, delete]
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
