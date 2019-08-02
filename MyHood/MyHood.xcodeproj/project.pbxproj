@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3601C69E22F3C7C90047EE2A /* EditPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601C69D22F3C7C90047EE2A /* EditPostVC.swift */; };
 		360D7C4F223080C5009E894E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D7C4E223080C5009E894E /* PostCell.swift */; };
 		3610E85F22442B20001AEA86 /* PostViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3610E85E22442B20001AEA86 /* PostViewVC.swift */; };
 		361DEEC02235946D00986E9B /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361DEEBF2235946D00986E9B /* AddPostVC.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3601C69D22F3C7C90047EE2A /* EditPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPostVC.swift; sourceTree = "<group>"; };
 		360D7C4E223080C5009E894E /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		3610E85E22442B20001AEA86 /* PostViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewVC.swift; sourceTree = "<group>"; };
 		361DEEBF2235946D00986E9B /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				361DEEBF2235946D00986E9B /* AddPostVC.swift */,
 				3610E85E22442B20001AEA86 /* PostViewVC.swift */,
+				3601C69D22F3C7C90047EE2A /* EditPostVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3601C69E22F3C7C90047EE2A /* EditPostVC.swift in Sources */,
 				36E4A840222ED7F400978EA0 /* Post.swift in Sources */,
 				361DEEC02235946D00986E9B /* AddPostVC.swift in Sources */,
 				36E4A82F222ED77C00978EA0 /* ViewController.swift in Sources */,

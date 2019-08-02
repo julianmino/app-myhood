@@ -44,6 +44,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return DataService.instance.loadedPosts.count
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            DataService.instance.loadedPosts.remove(at: indexPath.row)
+            DataService.instance.savePosts()
+            //DataService.instance.loadPosts()
+            tableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let Storyboard = UIStoryboard(name: "Main", bundle: nil)
