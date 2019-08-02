@@ -382,7 +382,7 @@
         <!--Edit PostVC-->
         <scene sceneID="cfg-Lo-YqJ">
             <objects>
-                <viewController id="Gc9-j9-Rre" customClass="EditPostVC" customModule="MyHood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditPostVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gc9-j9-Rre" customClass="EditPostVC" customModule="MyHood" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pg8-vL-sCr"/>
                         <viewControllerLayoutGuide type="bottom" id="9q1-Wj-px1"/>
@@ -464,6 +464,7 @@
                                     <color key="titleColor" red="0.97532538199999996" green="1" blue="0.94217178859999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="finishEditing:" destination="Gc9-j9-Rre" eventType="touchUpInside" id="Nff-ax-W6Z"/>
                                     <action selector="makePostPressed:" destination="yxi-DJ-Kee" eventType="touchUpInside" id="lhc-oz-QIr"/>
                                 </connections>
                             </button>

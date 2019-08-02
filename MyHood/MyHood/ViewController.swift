@@ -57,6 +57,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, indexPath in
+            let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let editingVC = Storyboard.instantiateViewController(withIdentifier: "EditPostVC") as! EditPostVC
+            editingVC.getPostDesc = DataService.instance.loadedPosts[indexPath.row].postDesc
+            editingVC.getPostTitle = DataService.instance.loadedPosts[indexPath.row].title
+            editingVC.getPostImage = DataService.instance.imageForPath(path: DataService.instance.loadedPosts[indexPath.row].imagePath)!
+            
+            self.navigationController?.pushViewController(editingVC, animated: true)
+        }
+        edit.backgroundColor = UIColor.blue
+        
+        return [edit]
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let Storyboard = UIStoryboard(name: "Main", bundle: nil)
