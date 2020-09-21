@@ -68,10 +68,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             editingVC.getImagePath = DataService.instance.loadedPosts[indexPath.row].imagePath
             editingVC.getPost = DataService.instance.loadedPosts[indexPath.row]
             
-            self.navigationController?.pushViewController(editingVC, animated: true)
+            //self.navigationController?.pushViewController(editingVC, animated: true)
+            self.present(editingVC, animated: true, completion: nil)
         }
-        edit.backgroundColor = UIColor.blue
-        
+        edit.backgroundColor = #colorLiteral(red: 0.08515470741, green: 0.4102378673, blue: 0.8549019694, alpha: 1)
         return [edit, delete]
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

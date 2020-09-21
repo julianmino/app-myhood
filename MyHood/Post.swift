@@ -16,7 +16,7 @@ class Post: NSObject, NSCoding {
     var imagePath: String {
         return _imagePath
     }
-    
+
     var title: String {
         get {
         return _title
